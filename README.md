@@ -42,13 +42,18 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+
+Closures give the ability for a child function or any inner function to access variables from a higher level scope even after the variables have been called or closed or terminated
+
 2. Study the following code, then answer the questions below.
 
 ```js
 function personalDice(name){
+
   return function(){
-      // generate random number between 1 and 6
+      // generate random number between 0 and 5
     const newRoll = Math.floor(Math.random() * 6);
+
     console.log(`${name} rolled a ${newRoll}`)
   }
 }
@@ -63,8 +68,13 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+The closure is used in the return function when its uses the name parameter.
+
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
-c. What is the lexical scope of `newRoll`? 
+the name stays the same, but the number changes.
+
+c. What is the lexical scope of `newRoll`?
+function personalDice(name){}
 
 ### Task 3 - Stretch Goals
 
