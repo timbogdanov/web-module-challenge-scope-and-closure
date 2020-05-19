@@ -56,11 +56,11 @@ function counter2() {
 
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-// function inning(){
-//   return Math.floor(Math.random() * 3);
-// }
+function inning(){
+  return Math.floor(Math.random() * 3);
+}
 
-// console.log(inning());
+console.log(inning());
 
 /* Task 3: finalScore()
 
@@ -76,26 +76,22 @@ finalScore(inning, 9) might return:
 
 */
 
-// function inning(){
-//   return Math.floor(Math.random() * 3);
-// }
+function finalScore(inning, number) {
 
-// function finalScore(inning, number) {
+  let score = {
+    Home: 0,
+    Away: 0,
+  }
 
-//   let score = {
-//     Home: 0,
-//     Away: 0,
-//   }
+  for (let i = 0; i < number; i++) {
+    score.Home += inning();
+    score.Away += inning();
+  }
 
-//   for (let i = 0; i < number; i++) {
-//     score.Home = score.Home + inning();
-//     score.Away = score.Away + inning();
-//   }
+  return score;
+}
 
-//   return score;
-// }
-
-// console.log(finalScore(inning, 9));
+console.log(finalScore(inning, 9));
 
 
 /* Task 4:
@@ -133,10 +129,6 @@ function getNumber(number){
   }
 }
 
-function inning(){
-  return Math.floor(Math.random() * 4);
-}
-
 function finalScore(inning, number) {
 
   let score = {
@@ -152,10 +144,10 @@ function finalScore(inning, number) {
     score.Home += home;
     score.Away += away;
 
-    storeArray.push((`${getNumber(i + 1)} inning: ${home} - ${away}`));
+    storeArray.push(`${getNumber(i + 1)} inning: ${home} - ${away}`);
   }
 
-  storeArray.push(score);
+  storeArray.push(`Final Score: ${score.Home} - ${score.Away}`);
   return storeArray;
 
 }
